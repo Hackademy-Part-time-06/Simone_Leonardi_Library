@@ -18,7 +18,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/index',[LibraryController::class, 'index'])->name('books.index');
-Route::get('/create',[LibraryController::class, 'create'])->name('books.create');
-Route::post('/salva',[LibraryController::class, 'salva'])->name('books.salva');
-Route::get('/libri/{book}/dettagli',[LibraryController::class, 'show'])->name('books.show');
+Route::get('/libri',[LibraryController::class,'index'])->name('books.index');
+Route::get('/libri/crea',[LibraryController::class,'create'])->name('books.create');
+Route::post('/libri/salva',[LibraryController::class,'store'])->name('books.store');
+Route::get('/libri/{book}/dettagli',[LibraryController::class,'show'])->name('books.show');
